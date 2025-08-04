@@ -1,0 +1,21 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "Yes, in any case"
+  - text: "Yes, if this method is static"
+  - text: "Yes, if this method is not static"
+  - text: "No, it will lead to an error"
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+  - name: task 2.html
+    visible: true
+    learner_created: true
+  - name: task-remote-info 2.yaml
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/8679#comment
+status: Solved
+record: -1
+local_check: false

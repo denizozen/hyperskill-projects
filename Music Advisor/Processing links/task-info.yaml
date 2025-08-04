@@ -1,0 +1,26 @@
+type: edu
+files:
+  - name: src/advisor/Main.java
+    visible: true
+    learner_created: false
+  - name: build.gradle
+    visible: true
+    learner_created: false
+  - name: src/advisor/Authentication.java
+    visible: true
+    learner_created: false
+  - name: test/MockTokenServer.java
+    visible: false
+    learner_created: false
+  - name: test/MusicAdvisorTest.java
+    visible: false
+    learner_created: false
+  - name: test/Server.java
+    visible: false
+    learner_created: false
+  - name: test/TempWebServerMock.java
+    visible: false
+    learner_created: false
+feedback_link: https://hyperskill.org/projects/62/stages/338/implement#comment
+status: Solved
+record: 4

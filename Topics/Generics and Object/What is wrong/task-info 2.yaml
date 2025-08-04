@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "Compile-time: incompatible types: long cannot be converted to java.lang.String"
+  - text: "Runtime: incompatible types: long cannot be converted to java.lang.String"
+  - text: Compilation and running successfuly
+  - text: "Compile-time: incompatible types: java.lang.String cannot be converted to\
+    \ long"
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+  - name: task-info 3.yaml
+    visible: true
+    learner_created: true
+  - name: task 3.html
+    visible: true
+    learner_created: true
+  - name: task-remote-info 3.yaml
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/11181#comment
+status: Solved
+record: -1
+local_check: false

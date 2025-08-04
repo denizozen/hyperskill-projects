@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Reflection_basics-What_objects_can_be_represented" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Reflection basics/What objects can be represented" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Music Advisor" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Reflection basics/What objects can be represented">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Reflection basics/What objects can be represented/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Reflection basics/What objects can be represented/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Reflection basics/What objects can be represented/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

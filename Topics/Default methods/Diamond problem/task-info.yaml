@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: "A class implements two or more interfaces with default methods, but none\
+    \ of them have the same signature"
+  - text: A class implements two or more interfaces with a default method having the
+      same signature
+  - text: A class implements two or more interfaces with an abstract method having the
+      same signature
+  - text: Class has no implementation of its interface default method
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+  - name: task 2.html
+    visible: true
+    learner_created: true
+  - name: task-remote-info 2.yaml
+    visible: true
+    learner_created: true
+  - name: task-info 2.yaml
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/11357#comment
+status: Solved
+record: -1
+local_check: false

@@ -1,0 +1,86 @@
+<div class="step-text">
+<h5 id="creating-objects-in-factories">Creating objects in factories</h5>
+<p>Sometimes we have a hierarchy of classes with one base class (or interface) and several subclasses, and we need to create a new subclass object depending on its type. Instead of writing a <code class="language-java">new</code> operator in client code where we will use the objects, it is convenient to encapsulate the code for creating objects in a separate place and call it from the client code. These places are known as <strong>factories</strong> that produce instances of classes related to the same hierarchy. They allow us to simplify the client code and protect it from changes when new classes are added to the hierarchy.</p>
+<p>So, a <strong>factory</strong> is a way of creating objects when one part of a program (a class or a method) creates objects and another one processes them.</p>
+<p>There are several kinds of factories: <strong><a class="theory-lookup not-relevant" href="/learn/step/3577" target="_blank" title="In Java, a static factory is a static method that creates, initializes, and returns an instance of a class. | It is a simple factory that is typically used to create objects of a hierarchy, where the method takes a required type as an argument, such as a string or enum, and returns a corresponding subclass instance through the base class. The static factory method encapsulates the code for creating objects, protecting the client code from changes in the class hierarchy and making it simpler to understand and maintain. It also hides the complexity of object creation and allows for the possibility of reusing existing objects, rather than creating new ones.">static factory</a></strong>, <strong><a class="theory-lookup not-relevant" href="/learn/step/3577" target="_blank" title="In Java, a simple factory is a type of factory that encapsulates the creation of objects, separating the creation process from the client code. | It is a method, often declared as static, that takes a type of the required object as a parameter and returns a suitable instance to the client code. The simple factory pattern protects the client code from changes in the class hierarchy and makes it simpler to understand and maintain. It also hides the complexity of object creation and provides a way to create objects when one part of a program creates objects and another one processes them.">simple factory</a></strong>, <strong><a class="theory-lookup not-relevant" href="/learn/step/3577" target="_blank" title="In Java, a factory method is a design pattern that provides a way to delegate the instantiation of a class to a subclass. | It allows the class to delegate the responsibility of creating class instances or class hierarchy to the subclass. The factory method pattern consists of four components: Creator, Product, ConcreteCreator, and ConcreteProduct. The Creator declares an abstract or virtual method for creating a product, and the subclass implements this method in its own way. Factory methods encapsulate the code for creating objects of a hierarchy in a special place (factory), making it easier to understand and maintain. They also protect the client code from changes in the class hierarchy. This pattern is useful when we have a hierarchy of classes with one base class or interface and several subclasses, and we need to create a new subclass object depending on its type. Instead of writing a switch-case statement in client code where we will use the object, it is convenient to encapsulate the code for creating objects in a separate place and call it from the client code.">factory method</a></strong> and <strong><a class="theory-lookup not-relevant" href="/learn/step/3577" target="_blank" title="In Java, an abstract factory is a creational design pattern that encapsulates the creation process of related or dependent objects. | It provides an interface or abstract class for creating a family of related objects without specifying their concrete classes. The abstract factory is based on composition, where object creation occurs in a method that is accessed through the factory interface. This pattern ensures low coupling by decreasing the concrete dependency of classes in the running code, allowing for the creation of related objects while keeping the code maintainable and flexible.">abstract factory</a></strong>. In this topic, we will study only the first two; they are often referred to as <em>idioms</em> rather than <a class="theory-lookup not-relevant" href="/learn/step/3577" target="_blank" title="In Java, a design pattern is a reusable solution to a common problem that occurs in software design. | It provides a general template for how to solve a problem, rather than a specific implementation. The Strategy pattern, for example, is a behavioral design pattern that defines a family of algorithms, encapsulates each one in a separate class, and makes them interchangeable within that family. This allows for easier addition of new algorithms and more concise code, by moving algorithm execution into their own classes. The Command pattern, another behavioral design pattern, decouples the logic between a command and its consumer by encapsulating all the data related to a command in one object.">design patterns</a>. But the latter two are real design patterns that rely on similar principles as those idioms.</p>
+<h5 id="static-factory-idiom">Static factory idiom</h5>
+<p>As an example, we will consider the following hierarchy of computers:</p>
+<pre><code class="language-java">class Computer {
+    
+    private long ram;
+    private long cpu;
+    
+    // getters and setters
+}
+
+class PC extends Computer { 
+    
+    // additional members
+}
+
+class Laptop extends Computer { 
+    
+    // additional members
+}</code></pre>
+<p> </p>
+<p><strong>The static factory</strong> is the simplest factory that we can write. It has one static method which creates objects of the hierarchy. The method takes a required type as a string or enum argument and returns a corresponding subclass instance through the base class.</p>
+<p>To create new computers, we invoke the static factory passing a required type:</p>
+<pre><code class="language-java">class ComputerStaticFactory {
+    
+    public static Computer newInstance(String type) {
+        if (type.equals("Computer")) {
+            return new Computer();
+        } else if (type.equals("PC")) {
+            return new PC();
+        } else if (type.equals("Laptop")) {
+            return new Laptop();
+        }
+        return null; // if not a suitable type
+    }
+}</code></pre>
+<p> </p>
+<p>Depending on the passed type, a suitable <a class="theory-lookup not-relevant" href="/learn/step/3577" target="_blank" title="In Java, a branch is a part of a conditional statement or a control flow mechanism that allows for a departure from the standard sequence of statement execution. | It enables the program to alter the flow of a loop or conditional statement based on a specific condition. The two main branching statements in Java are 'break' and 'continue'. The 'break' statement terminates the current loop or switch case, while the 'continue' statement skips the current iteration of a loop. Proper use of branching statements can make your code more efficient and readable.">branch</a> will work. We also can write the same using <code class="language-java">switch</code>.</p>
+<p>The following client code creates two computers: a laptop and a PC:</p>
+<pre><code class="language-java">public class FactoryClient {
+    
+    public static void main(String args[]) {
+        
+        Computer pc = ComputerStaticFactory.newInstance("PC");
+        System.out.println(pc instanceof PC); // prints "true"
+       
+        Computer laptop = ComputerStaticFactory.newInstance("Laptop");
+        System.out.println(laptop instanceof Laptop); // prints "true"
+    }
+} </code></pre>
+<p>It is not difficult to declare a new class that extends <code class="language-java">Computer</code> and modify the factory to create instances of a new class.</p>
+<p>There are several possible implementation features:</p>
+<ul><li><p>the method <code class="language-java">newInstance</code> of <code class="language-java">ComputerStaticFactory</code> takes an enum type to restrict possible values;</p></li><li><p>the method <code class="language-java">newInstance</code> throws an exception if an unsuitable type is passed instead of returning <code class="language-java">null</code>;</p></li><li><p>move the method <code class="language-java">newInstance</code> directly to the base of the hierarchy: <code class="language-java">Computer</code> class;</p></li><li><p>a factory can have multiple methods that produce instances of different classes or an instance of a default class.</p></li></ul>
+<h5 id="simple-factory-idiom">Simple factory idiom</h5>
+<p>The simple factory idioms differ from the static factory because the method for creating objects is non-static.</p>
+<pre><code class="language-java">class ComputerFactory {
+    
+    // it may contain some fields
+    
+    public Computer newInstance(String type) {
+        if (type.equals("Computer")) {
+            return new Computer();
+        } else if (type.equals("PC")) {
+            return new PC();
+        } else if (type.equals("Laptop")) {
+            return new Laptop();
+        }
+        return null;
+    }
+}</code></pre>
+<p> </p>
+<p>In the client code, we should create an instance of the factory and then invoke <em>newInstance</em> as shown below:</p>
+<p> </p>
+<pre><code class="language-java">ComputerFactory factory = new ComputerFactory();
+Computer pc = factory.newInstance("PC");</code></pre>
+<p> </p>
+<p>The simple factory idiom has the same features as the static factory. But, unlike the static factory, it is possible to create multiple differently parameterized factories to control instantiating. You can also subclass the factory and override its non-static method that is used to create other factories.</p>
+<h5 id="conclusion">Conclusion</h5>
+<p>We have considered two factory idioms in action: <strong>static factory</strong> and <strong>simple factory</strong>. They are not really design patterns, but both are nevertheless useful in practice; other factories rely pretty much on the same principles.</p>
+<p>According to the principles, we encapsulate the code for creating objects of a hierarchy in a special place (factory). A factory has a method that takes a type of the required object as its parameter and returns a suitable instance to the client code. It protects the client code from changes in the class hierarchy and makes it simpler to understand and maintain.</p>
+<p>Another thing to remember is that a factory may have multiple clients that need to create objects. They do not need to duplicate the same code that calls the <code class="language-java">new</code> operator to make an instance.</p>
+</div>

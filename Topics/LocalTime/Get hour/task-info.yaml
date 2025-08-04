@@ -1,0 +1,30 @@
+type: number
+files:
+  - name: answer.txt
+    visible: true
+    placeholders:
+      - offset: 0
+        length: 23
+        placeholder_text: type your solution here
+        initial_state:
+          length: 23
+          offset: 0
+        initialized_from_dependency: false
+        selected: false
+        status: Solved
+    learner_created: false
+  - name: task 2.html
+    visible: true
+    learner_created: true
+  - name: task-remote-info 2.yaml
+    visible: true
+    learner_created: true
+  - name: answer 2.txt
+    visible: true
+    learner_created: true
+  - name: task-info 2.yaml
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/2870#comment
+status: Solved
+record: -1

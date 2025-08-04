@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: The method <b>plusYears</b> modify the instance of the class
+  - text: The method <b>plusSeconds</b> returns a new instance of the class
+  - text: "The invocation <b>LocalDateTime.of(2017, 7, 6, 5, 4)</b> creates an instance\
+    \ representing <b>7 June 2017, 05:04</b>"
+  - text: The method <b>withSecond</b> modify the instance of the class
+  - text: "The invocation <b>LocalDateTime.parse(\"2017-05-04T12:24\")</b> creates an\
+    \ instance representing <b>4 May 2017, 12:24</b>"
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+  - name: task 2.html
+    visible: true
+    learner_created: true
+  - name: task-remote-info 2.yaml
+    visible: true
+    learner_created: true
+  - name: task-info 2.yaml
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/2865#comment
+status: Solved
+record: -1
+local_check: false

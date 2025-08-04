@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: "Function&lt;T, R&gt; method(Function&lt;T, R&gt; f,  int n)"
+  - text: int method(int n)
+  - text: "Function&lt;T, R&gt; method(int n)"
+  - text: "void method(Function&lt;T, R&gt; f)"
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+  - name: task 2.html
+    visible: true
+    learner_created: true
+  - name: task-remote-info 2.yaml
+    visible: true
+    learner_created: true
+  - name: task-info 2.yaml
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/2361#comment
+status: Solved
+record: -1
+local_check: false

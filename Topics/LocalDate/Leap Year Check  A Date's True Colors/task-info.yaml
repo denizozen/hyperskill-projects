@@ -1,0 +1,19 @@
+type: code
+custom_name: "Leap Year Check: A Date's True Colors"
+files:
+  - name: src/Main.java
+    visible: true
+    learner_created: false
+  - name: task 2.html
+    visible: true
+    learner_created: true
+  - name: task-remote-info 2.yaml
+    visible: true
+    learner_created: true
+  - name: task-info 2.yaml
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/48944#comment
+status: Solved
+record: -1
+submission_language: java17

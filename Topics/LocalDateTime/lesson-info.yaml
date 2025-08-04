@@ -1,0 +1,7 @@
+content:
+  - Theory
+  - Merging date-time instances
+  - Subtracting hours and adding minutes
+  - Methods of LocalDateTime
+  - The passed hours since the beginning of year
+  - Add 11 hours and print the date

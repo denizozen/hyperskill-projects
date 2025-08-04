@@ -1,0 +1,17 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: constructors
+  - text: non-static fields
+  - text: "parent class (class, not interface)"
+  - text: instances
+  - text: non-static methods
+  - text: static methods
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3432#comment
+status: Solved
+record: -1
+local_check: false

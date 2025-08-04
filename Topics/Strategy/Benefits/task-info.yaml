@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: It enables to choose an algorithm at run-time.
+  - text: It reduces the number of classes in a program.
+  - text: It isolates the code of algorithms from the client code.
+  - text: It improves the performance of a program.
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+  - name: task 2.html
+    visible: true
+    learner_created: true
+  - name: task-remote-info 2.yaml
+    visible: true
+    learner_created: true
+  - name: task-info 2.yaml
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/3780#comment
+status: Solved
+record: -1
+local_check: false
